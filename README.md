@@ -1,5 +1,13 @@
 **Kaggle Leaderboard Score: 0.913**
 
+## Context
+
+This pipeline started from a manually-tuned 0.922 baseline (built on top of a public 0.948 notebook fork that originally scored 0.846 after my initial setup, which I then tuned to 0.922 by hand). The V23 run was AIBuildAI's autonomous attempt to push from that 0.922 baseline toward 0.94+. AIBuildAI's autonomous modifications resulted in a Kaggle leaderboard score of **0.913** — a regression from the manually-tuned 0.922 starting point. The reason for the regression is not yet diagnosed.
+
+This repository contains AIBuildAI's autonomous output as-is, without further manual tuning, to document the tool's autonomous behavior on this task.
+
+---
+
 # BirdCLEF+ 2026 V23: Inference Integration Pipeline
 
 ## Overview
