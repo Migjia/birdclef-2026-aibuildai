@@ -1,0 +1,26 @@
+# V23 Inference Integration Pipeline Configuration
+# Inference-only parameter sweep - no training involved
+
+# Data paths
+data_dir: "/home/mingjiacai/aibuildai-linux-x86_64-v0.1.1/birdclef_data"
+output_dir: "/home/mingjiacai/aibuildai-linux-x86_64-v0.1.1/code_v23/code/V23-Push094-From-0922/20260515_215233/candidate_1/attempt_1"
+
+# Model paths
+sed_model_dir: "/home/mingjiacai/aibuildai-linux-x86_64-v0.1.1/high_lb_notebooks/BC2026-Distilled-SED-Public"
+perch_model_path: "/home/mingjiacai/aibuildai-linux-x86_64-v0.1.1/high_lb_notebooks/perch_v2_no_dft.onnx/perch_v2_no_dft.onnx"
+taxonomy_csv_path: "/home/mingjiacai/aibuildai-linux-x86_64-v0.1.1/high_lb_notebooks/bird-vocalization-classifier-tensorflow2-perch_v2_cpu-v1/assets/perch_v2_ebird_classes.csv"
+
+# Runtime settings
+fast_mode: true  # Use 2-fold SED for faster inference (important for <90min Kaggle constraint)
+test_mode: true  # Use train_soundscapes for local testing (test_soundscapes is empty locally)
+test_max_samples: 3  # Max files to process in test mode
+
+# Checkpoint settings (not used in inference-only pipeline)
+resume_checkpoint: null
+checkpoint_interval_steps: 500  # Not applicable to inference-only task
+
+# Validation settings (not used - no training)
+num_folds: 1  # Not applicable to inference-only task
+
+# Random seed
+random_seed: 42

@@ -1,0 +1,178 @@
+[
+  {
+    "w_perch": 0.0,
+    "w_sed": 1.0,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w0.00_1.00.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 1.0,
+    "w_sed": 0.0,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w1.00_0.00.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.55,
+    "w_sed": 0.45,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w0.55_0.45.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.1,
+    "w_sed": 0.9,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w0.10_0.90.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.15,
+    "w_sed": 0.85,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w0.15_0.85.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.2,
+    "w_sed": 0.8,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w0.20_0.80.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.25,
+    "w_sed": 0.75,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w0.25_0.75.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.3,
+    "w_sed": 0.7,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w0.30_0.70.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.35,
+    "w_sed": 0.65,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w0.35_0.65.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.4,
+    "w_sed": 0.6,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w0.40_0.60.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.45,
+    "w_sed": 0.55,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w0.45_0.55.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.5,
+    "w_sed": 0.5,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w0.50_0.50.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.6,
+    "w_sed": 0.4,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w0.60_0.40.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.65,
+    "w_sed": 0.35,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w0.65_0.35.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.55,
+    "w_sed": 0.45,
+    "temporal_sigma": 0.5,
+    "lambda_prior": 0.0,
+    "output_file": "submission_w0.55_0.45_s0.50_l0.00.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.55,
+    "w_sed": 0.45,
+    "temporal_sigma": 0.5,
+    "lambda_prior": 0.2,
+    "output_file": "submission_w0.55_0.45_s0.50_l0.20.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.55,
+    "w_sed": 0.45,
+    "temporal_sigma": 0.5,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w0.55_0.45_s0.50_l0.40.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.55,
+    "w_sed": 0.45,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.0,
+    "output_file": "submission_w0.55_0.45_s0.65_l0.00.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.55,
+    "w_sed": 0.45,
+    "temporal_sigma": 0.65,
+    "lambda_prior": 0.2,
+    "output_file": "submission_w0.55_0.45_s0.65_l0.20.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.55,
+    "w_sed": 0.45,
+    "temporal_sigma": 0.8,
+    "lambda_prior": 0.0,
+    "output_file": "submission_w0.55_0.45_s0.80_l0.00.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.55,
+    "w_sed": 0.45,
+    "temporal_sigma": 0.8,
+    "lambda_prior": 0.2,
+    "output_file": "submission_w0.55_0.45_s0.80_l0.20.csv",
+    "valid": true
+  },
+  {
+    "w_perch": 0.55,
+    "w_sed": 0.45,
+    "temporal_sigma": 0.8,
+    "lambda_prior": 0.4,
+    "output_file": "submission_w0.55_0.45_s0.80_l0.40.csv",
+    "valid": true
+  }
+]
