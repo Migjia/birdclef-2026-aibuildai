@@ -160,6 +160,92 @@ All validation checks **PASSED**:
 
 These are **training-required** components excluded from this inference-only task.
 
+## Reproduction Guide
+
+### Environment
+
+- **Python**: 3.10 or higher
+- **Required packages**: numpy, pandas, soundfile, librosa, onnxruntime, scipy, pyyaml
+
+  Install via:
+```bash
+  pip install numpy pandas soundfile librosa onnxruntime scipy pyyaml
+```
+
+- **Hardware**: CPU is sufficient for inference (the pipeline is designed for Kaggle CPU-only environment). The original training was performed on a GPU server (NVIDIA A100), approximately 5-6 hours.
+
+### Data and Model Setup
+
+This pipeline requires the following datasets (all available on Kaggle):
+
+1. **BirdCLEF 2026 competition data**
+   - Source: https://www.kaggle.com/competitions/birdclef-2026/data
+   - Contains `sample_submission.csv`, `train.csv`, `test_soundscapes/`, etc.
+
+2. **Distilled SED ONNX models (5-fold)**
+   - Kaggle dataset: `tuckerarrants/bc2026-distilled-sed-public`
+   - Contains `sed_fold0.onnx` through `sed_fold4.onnx`
+
+3. **Perch v2 ONNX model**
+   - Kaggle dataset: `rishikeshjani/perch-onnx-for-birdclef-2026`
+   - Contains `perch_v2_no_dft.onnx`
+
+4. **Perch taxonomy CSV**
+   - Included in the Perch v2 package above
+   - File: `perch_v2_ebird_classes.csv`
+
+### Important: Path Configuration
+
+The `inference.py` script contains hardcoded paths from the original development environment (e.g. `/home/mingjiacai/aibuildai-linux-x86_64-v0.1.1/...`). These paths reflect AIBuildAI autonomous output preserved as-is.
+
+**Before running, edit the `config` dictionary in `inference.py` `main()` function** to point to your local model paths:
+
+- `sed_model_dir`: directory containing `sed_fold0.onnx` through `sed_fold4.onnx`
+- `perch_model_path`: path to `perch_v2_no_dft.onnx`
+- `taxonomy_csv_path`: path to `perch_v2_ebird_classes.csv`
+
+### Step-by-Step Reproduction
+
+**Step 1**: Clone this repository
+
+```bash
+git clone https://github.com/Migjia/birdclef-2026-aibuildai.git
+cd birdclef-2026-aibuildai
+```
+
+**Step 2**: Set up Python environment and install dependencies (see Environment section above).
+
+**Step 3**: Download the BirdCLEF 2026 data and pre-trained ONNX models (see Data and Model Setup above). Place them anywhere on your system.
+
+**Step 4**: Open `inference.py` and update the three hardcoded paths in the `config` dictionary to point to your local model locations.
+
+**Step 5**: Run inference:
+
+```bash
+python3 inference.py --input /YOUR/PATH/TO/birdclef-2026-data --output submission.csv
+```
+
+The `--input` directory should contain:
+- `sample_submission.csv` (defines the 234 target classes)
+- `test_soundscapes/` (directory with `.ogg` audio files)
+- `train.csv` (optional; used for global prior, falls back to uniform if absent)
+
+**Expected runtime**:
+- FAST_MODE (2 SED folds): 40-50 minutes on Kaggle CPU
+- FULL_MODE (5 SED folds): 65-75 minutes on Kaggle CPU
+
+**Step 6**: Submit the generated `submission.csv` to the BirdCLEF 2026 Kaggle competition.
+
+**Expected Kaggle leaderboard score: 0.913**
+
+### Notes
+
+- The `V23-Push094-From-0922-train.py` script is not a neural network training script. It performs a parameter sweep over blend weights, temporal smoothing sigmas, and global prior lambdas on top of the pre-trained ONNX models. The actual training of SED and Perch models was done externally (those weights are loaded from the Kaggle datasets listed above).
+
+- Additional AIBuildAI internal artifacts (manager state, design decisions, full execution log) are available on request. They were excluded from this public repo as they contain development-environment paths and are not needed for reproducing the 0.913 result.
+
+---
+
 ## Usage
 
 ### For Kaggle Submission
